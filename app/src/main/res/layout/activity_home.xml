@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorFondoPrincipal"
+    tools:context=".Home">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffca74"
+
+        android:orientation="horizontal">
+
+       <TextView
+            android:id="@+id/txtEmailUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="abe.colorado@gmail.coom"
+            android:textColor="#111" />
+
+
+        <ImageView
+
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitEnd"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_silueta_de_usuario" /><![CDATA[
+
+        />
+
+        ]]>
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorFondoPrincipal"
+        android:orientation="vertical">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <ListView
+            android:id="@+id/lisVObras"
+            android:layout_width="match_parent"
+            android:layout_height="490dp">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btncirculo"
+        android:gravity="center"
+        android:text="Salir"
+        android:textColor="#111" />
+</LinearLayout>
+
+
+
+
+</LinearLayout>

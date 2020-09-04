@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <corners android:radius="70dp"></corners>
+<stroke android:color="#111" android:width="5dp"></stroke>
+           <!-- <solid android:color="@color/colorBtnRegistrar"/>
+            -->
+        </shape>
+    </item>
+</selector>

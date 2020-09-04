@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorFondoPrincipal"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+
+
+        <ImageView
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_login"
+            />
+
+
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:hint="Nombre"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+
+
+
+        <EditText
+            android:id="@+id/txtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:hint="Apellido"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp" />
+
+        <EditText
+            android:id="@+id/txtemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:hint="email"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:gravity="center"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:inputType="textPassword"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            >
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#111"
+                android:background="@drawable/btncirculo"
+                android:text="Registrar"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                />
+
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:id="@+id/progressBarCarga"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:progress="3" />
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>
