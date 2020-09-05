@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/colorFondoPrincipal"
     tools:context=".form_cargar_nueve_obra">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,5 +76,5 @@
             tools:layout_editor_absoluteY="361dp" />
 
     </LinearLayout>
-
+</ScrollView>
 </LinearLayout>

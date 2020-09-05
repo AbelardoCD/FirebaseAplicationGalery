@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorFondoPrincipal"
+    android:background="@color/colorPrincipal"
     android:orientation="vertical"
     tools:context=".obra_descripcion">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imgObraDescripcion"
         android:layout_width="match_parent"
@@ -23,7 +29,7 @@
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:hint="Obra"
-        android:textColor="#111"
+        android:textColor="#ffffff"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -35,7 +41,7 @@
         android:fontFamily="cursive"
 
         android:text="TextView"
-        android:textColor="#111" />
+        android:textColor="#ffffff" />
 
     <ScrollView
         android:background="@color/colorBtnAcceder"
@@ -55,6 +61,6 @@
             android:textColor="#111"
             android:textSize="14sp" />
     </ScrollView>
-
-
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>

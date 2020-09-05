@@ -6,5 +6,5 @@
     <color name="colorFondoPrincipal">#30b18a</color>
     <color name="colorBtnRegistrar">#ffca74</color>
     <color name="colorBtnAcceder">#ffe3b3</color>
-
+    <color name="colorPrincipal">#424242</color>
 </resources>

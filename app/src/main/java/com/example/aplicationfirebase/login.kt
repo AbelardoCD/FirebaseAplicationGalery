@@ -12,6 +12,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import com.example.aplicationfirebase.models.Obra
+import com.example.aplicationfirebase.models.userPreferenceManager
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -39,12 +40,15 @@ class login : AppCompatActivity() {
     /*******STORAGE*****/
     lateinit var storage: StorageReference
 
-
+    lateinit var userPreference:userPreferenceManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         ventanaRegistro()
-        login()
+        userPreference = userPreferenceManager(this)
+
+        validarLoginLocalORemoto()
+
         progresBar = progressBar
         /*******************************************/
         database = FirebaseDatabase.getInstance()
@@ -53,9 +57,31 @@ class login : AppCompatActivity() {
         listaObras = ArrayList()
 
 
-        //consultarImagen()
+
     }
 
+    private fun validarLoginLocalORemoto(){
+        if(obtenerDatosUserLocal() !=false){
+           // progresBar.visibility = View.INVISIBLE
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }else{
+            login()
+        }
+    }
+    private fun obtenerDatosUserLocal():Boolean{
+        val userPreferenceEmail = userPreference.getEmail()
+        val userpreferencePassword = userPreference.getPassword()
+
+        println("Password user logeado Email   " + userPreferenceEmail)
+        println("Password user logeado Password  " + userpreferencePassword)
+        if(userPreferenceEmail !="" && userpreferencePassword !=""){
+            return true
+
+        }else{
+            return false
+        }
+    }
     fun getRegistro() {
         referencia.child("qwerty").addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -89,6 +115,7 @@ class login : AppCompatActivity() {
                     txtPasswordLogin.text.toString()
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        userPreference.guaradarCredenciales( txtEmail.text.toString(),txtPasswordLogin.text.toString())
                         logSuccess(it.result?.user?.email ?: "", providerType.BASIC)
                     } else {
                         alertaErrorAutenticando()
@@ -121,6 +148,7 @@ class login : AppCompatActivity() {
     }
 
     private fun logSuccess(email: String, provider: providerType) {
+
         progresBar.visibility = View.INVISIBLE
         val intent = Intent(this, MenuActivity::class.java).apply {
             putExtra("email", email)

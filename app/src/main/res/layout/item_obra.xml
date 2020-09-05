@@ -7,8 +7,10 @@
     android:layout_height="match_parent">
 
 <RelativeLayout
+
     android:layout_width="match_parent"
     android:orientation="horizontal"
+
     android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/imgViewObra"
@@ -32,7 +34,6 @@
         android:layout_toRightOf="@+id/imgViewObra"
         android:gravity="center"
         android:text="Hola"
-        android:textColor="#111"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -49,7 +50,6 @@
         android:fontFamily="cursive"
         android:gravity="center"
         android:text="Hola"
-        android:textColor="#111"
         android:textSize="14sp"
         android:textStyle="bold" />
 

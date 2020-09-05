@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
+import java.io.IOException
 
 
 enum class providerType {
@@ -35,12 +36,16 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         cerrarSesion()
-        Auth = FirebaseAuth.getInstance()
+
+             Auth = FirebaseAuth.getInstance()
         user = Auth.currentUser!!
-        datosUsuarioLogeado(user)
-        /****************************/
-        database = FirebaseDatabase.getInstance()
-        referencia = database.getReference("obras")
+     datosUsuarioLogeado(user)
+            /****************************/
+            database = FirebaseDatabase.getInstance()
+            referencia = database.getReference("obras")
+
+
+
 
         obrasList = mutableListOf()
         lista = findViewById(R.id.lisVObras)
@@ -120,11 +125,11 @@ class Home : AppCompatActivity() {
     }
 
     private fun cerrarSesion() {
-        btnCerrarSesion.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
+    //    btnCerrarSesion.setOnClickListener {
+      //      FirebaseAuth.getInstance().signOut()
 
-            onBackPressed()
-        }
+        //    onBackPressed()
+        //}
     }
 
     /*Traemos todos los usuarrios y comparamos*/

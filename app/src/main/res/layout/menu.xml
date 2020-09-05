@@ -9,22 +9,44 @@
     tools:context=".MenuActivity">
 
 
-    <Button
-        android:id="@+id/btnIrGaleria"
-        android:text="Galeria"
-        android:textColor="#111"
-        android:layout_marginTop="@android:dimen/thumbnail_width"
-        android:background="@drawable/btnacceder"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <LinearLayout
 
-    <Button
-        android:id="@+id/btnIrVentanaNuevaObra"
-        android:text="Nuevo"
-        android:textColor="#111"
-        android:layout_marginTop="@android:dimen/thumbnail_width"
-        android:background="@drawable/btnacceder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <Button
+            android:id="@+id/btnIrGaleria"
+            android:text="Galeria"
+            android:textColor="#111"
+            android:layout_marginTop="@android:dimen/thumbnail_width"
+            android:background="@drawable/btnacceder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnIrVentanaNuevaObra"
+            android:text="Nuevo"
+            android:textColor="#111"
+            android:layout_marginTop="@android:dimen/thumbnail_width"
+            android:background="@drawable/btnacceder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btncerrarSesion"
+            android:text="Cerrar Sesión"
+            android:textColor="#111"
+            android:layout_marginTop="@android:dimen/thumbnail_width"
+            android:background="@drawable/btnacceder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
 
 </LinearLayout>
