@@ -6,73 +6,73 @@
     android:layout_height="match_parent"
     android:background="@color/colorFondoPrincipal"
     tools:context=".form_cargar_nueve_obra">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
 
-
-    <ImageButton
-        android:id="@+id/imgBtn"
-        android:layout_width="200dp"
-       android:layout_gravity="center"
-        android:layout_height="200dp"
-        android:layout_marginTop="@android:dimen/app_icon_size"
-        android:layout_weight="1"
-         />
-
-    <EditText
-        android:id="@+id/txtNombreObra"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:layout_marginTop="@android:dimen/app_icon_size"
-        android:inputType="textPersonName"
-        android:hint="Nombre" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtAutorObra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginTop="@android:dimen/app_icon_size"
 
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Autor" />
+        <ImageButton
+            android:id="@+id/imgBtn"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:layout_weight="1"
+            android:background="@android:drawable/ic_menu_gallery" />
 
-    <EditText
-        android:id="@+id/txtDescripcionObra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginTop="@android:dimen/app_icon_size"
+        <EditText
+            android:id="@+id/txtNombreObra"
+            style="?android:attr/yesNoPreferenceStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
 
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine" />
 
-    <Button
-        android:id="@+id/btnNuevaObra"
-        android:layout_marginTop="@android:dimen/app_icon_size"
+        <EditText
+            android:gravity="center"
+            style="?android:attr/yesNoPreferenceStyle"
+            android:id="@+id/txtAutorObra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:layout_weight="1"
 
-        android:layout_width="200dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Abrir galeria"
+            android:ems="10"
+            android:hint="Autor"
+            android:inputType="textPersonName" />
 
-        android:background="@drawable/btncirculo"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="361dp" />
+        <EditText
+            android:id="@+id/txtDescripcionObra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:layout_weight="1"
+            style="?android:attr/yesNoPreferenceStyle"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Descripcion"
+            android:inputType="textMultiLine" />
 
-    <TextView
-        android:id="@+id/txturl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
+        <Button
+            android:id="@+id/btnNuevaObra"
+            android:layout_width="200dp"
 
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:background="@drawable/btncirculo"
+
+            android:text="Guardar"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="361dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

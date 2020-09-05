@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoPrincipal"
+    android:orientation="vertical"
+    tools:context=".obra_descripcion">
+
+    <ImageView
+        android:id="@+id/imgObraDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+         />
+
+    <TextView
+        android:id="@+id/txtTituloObraDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:hint="Obra"
+        android:textColor="#111"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtAutorObraDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="cursive"
+
+        android:text="TextView"
+        android:textColor="#111" />
+
+    <ScrollView
+        android:background="@color/colorBtnAcceder"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:layout_marginRight="10dp"
+        android:layout_height="200dp">
+        <TextView
+            android:id="@+id/txtDescripcionDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="casual"
+            android:text="Descripcion"
+            android:textColor="#111"
+            android:textSize="14sp" />
+    </ScrollView>
+
+
+</LinearLayout>

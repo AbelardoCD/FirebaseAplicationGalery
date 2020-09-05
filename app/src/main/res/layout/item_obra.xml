@@ -11,10 +11,10 @@
     android:orientation="horizontal"
     android:layout_height="wrap_content">
     <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/elemento_ovalo"
+        android:id="@+id/imgViewObra"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+
         android:src="@drawable/ic_monalisa"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
@@ -22,16 +22,49 @@
         tools:layout_editor_absoluteY="36dp" />
 
     <TextView
-        android:id="@+id/txtNombre"
+        android:id="@+id/txtNombreObraEnLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
         android:layout_marginTop="36dp"
+        android:layout_toEndOf="@+id/imgViewObra"
+        android:layout_toRightOf="@+id/imgViewObra"
         android:gravity="center"
         android:text="Hola"
         android:textColor="#111"
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/txtautorListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNombreObraEnLista"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/imgViewObra"
+        android:layout_toRightOf="@+id/imgViewObra"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Hola"
+        android:textColor="#111"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+   <!-- <TextView
+        android:id="@+id/txtautorListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:layout_below="@+id/txtNombreObraEnLista"
+        android:layout_marginLeft="290dp"
+        android:fontFamily="cursive"
+        android:text="TextView"
+        android:textColor="#111" />
+-->
 
 </RelativeLayout>
 </LinearLayout>

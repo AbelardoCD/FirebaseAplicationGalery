@@ -24,7 +24,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="abe.colorado@gmail.coom"
+            android:text=""
             android:textColor="#111" />
 
 

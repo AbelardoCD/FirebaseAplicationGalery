@@ -7,7 +7,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicationfirebase.models.Obra
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +39,7 @@ class form_cargar_nueve_obra : AppCompatActivity() {
         mdatabase = FirebaseDatabase.getInstance().getReference()
         firebaseStorage = FirebaseStorage.getInstance().getReference()
 
-        conFire = coneccionFirebase(this, auth, mdatabase, firebaseStorage)
+        conFire = coneccionFirebase(this)
 
 
         getGaleria()
@@ -91,7 +90,10 @@ class form_cargar_nueve_obra : AppCompatActivity() {
                         getdatosNuevObra()
                         val ref = conFire.getReferenciaObras()
                         val idObra = ref.push().key
-                        val nuevaObra = Obra(idObra!!,nombre,autor,descripcion,downloadUri)
+                        val nuevaObra = Obra(idObra!!,nombre,autor,descripcion,
+                            downloadUri.toString()
+                        )
+
                         println("Nueva Obra..." + nuevaObra)
                         val conexion = conFire
                         val pasarParametrosConexion = conexion.guardarObra(nuevaObra)

@@ -87,16 +87,9 @@
             android:textColor="#111"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></TextView>-->
-        <ImageView
-            android:id="@+id/imgpruebaConsulta"
-            android:layout_width="match_parent"
-            android:background="@android:drawable/alert_dark_frame"
-            android:layout_height="250dp">
-
-        </ImageView>
 
 
-<ProgressBar
+        <ProgressBar
     android:id="@+id/progressBar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

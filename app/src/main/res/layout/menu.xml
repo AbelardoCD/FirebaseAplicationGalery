@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorFondoPrincipal"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+
+    <Button
+        android:id="@+id/btnIrGaleria"
+        android:text="Galeria"
+        android:textColor="#111"
+        android:layout_marginTop="@android:dimen/thumbnail_width"
+        android:background="@drawable/btnacceder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnIrVentanaNuevaObra"
+        android:text="Nuevo"
+        android:textColor="#111"
+        android:layout_marginTop="@android:dimen/thumbnail_width"
+        android:background="@drawable/btnacceder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
