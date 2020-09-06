@@ -44,4 +44,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'jp.wasabeef:blurry:2.0.2'
+
+    implementation 'com.eightbitlab:blurview:1.6.3'
 }

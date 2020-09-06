@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:drawable="@color/colorFondoPrincipal"></item>
-    <item android:drawable="@drawable/ic_login" android:gravity="center"
+    <item android:drawable="@drawable/blur_image"></item>
+    <item android:drawable="@drawable/ic_monalisa" android:gravity="center"
        >
     </item>
 

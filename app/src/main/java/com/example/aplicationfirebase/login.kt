@@ -41,7 +41,9 @@ class login : AppCompatActivity() {
     lateinit var storage: StorageReference
 
     lateinit var userPreference:userPreferenceManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Thread.sleep(100)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         ventanaRegistro()
@@ -63,7 +65,7 @@ class login : AppCompatActivity() {
     private fun validarLoginLocalORemoto(){
         if(obtenerDatosUserLocal() !=false){
            // progresBar.visibility = View.INVISIBLE
-            val intent = Intent(this, MenuActivity::class.java)
+            val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }else{
             login()
@@ -150,7 +152,7 @@ class login : AppCompatActivity() {
     private fun logSuccess(email: String, provider: providerType) {
 
         progresBar.visibility = View.INVISIBLE
-        val intent = Intent(this, MenuActivity::class.java).apply {
+        val intent = Intent(this, Home::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }

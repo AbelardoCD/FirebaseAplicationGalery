@@ -16,28 +16,50 @@
 
         android:orientation="horizontal">
 
+
+
         <TextView
             android:id="@+id/txtEmailUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:background="#ffca74"
+            android:text="User" />
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text=""
+        <Button
+            android:id="@+id/btnIrGaleria"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#ffca74"
+            android:padding="10dp"
+            android:text="Galeria"
+            android:textColor="#111"
+
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnIrVentanaNuevaObra"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#ffca74"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="Nuevo"
             android:textColor="#111" />
 
-
-        <ImageView
-
-            android:id="@+id/imageView3"
+        <Button
+            android:id="@+id/btncerrarSesion"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="fitEnd"
-            android:src="@drawable/ic_silueta_de_usuario" /><![CDATA[
+            android:layout_height="match_parent"
+            android:background="#ffca74"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="Cerrar Sesión"
+            android:textColor="#111" />
+
+        <![CDATA[
 
         />
 

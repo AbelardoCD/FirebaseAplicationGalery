@@ -2,16 +2,21 @@ package com.example.aplicationfirebase
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
+import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicationfirebase.Adapters.obraAdapter
 import com.example.aplicationfirebase.models.Obra
 import com.example.aplicationfirebase.models.User
+import com.example.aplicationfirebase.models.userPreferenceManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.btncerrarSesion
+import kotlinx.android.synthetic.main.menu.*
 import java.io.IOException
 
 
@@ -30,19 +35,28 @@ class Home : AppCompatActivity() {
     lateinit var obrasList: MutableList<Obra>
     lateinit var lista: ListView
 
-
+    lateinit var userPreference:userPreferenceManager
+     lateinit var btnGaleria: Button
+    lateinit var btnCerrarSesion : Button
+    lateinit var btnNuevo: Button
     /********************************************/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         cerrarSesion()
+        userPreference = userPreferenceManager(this)
 
-             Auth = FirebaseAuth.getInstance()
+        btnGaleria =findViewById(R.id.btnIrGaleria)
+        btnNuevo =findViewById(R.id.btnIrVentanaNuevaObra)
+        btnCerrarSesion = findViewById(R.id.btncerrarSesion)
+        controlBotones()
+
+        Auth = FirebaseAuth.getInstance()
         user = Auth.currentUser!!
-     datosUsuarioLogeado(user)
-            /****************************/
-            database = FirebaseDatabase.getInstance()
-            referencia = database.getReference("obras")
+        datosUsuarioLogeado(user)
+        /****************************/
+        database = FirebaseDatabase.getInstance()
+        referencia = database.getReference("obras")
 
 
 
@@ -125,8 +139,8 @@ class Home : AppCompatActivity() {
     }
 
     private fun cerrarSesion() {
-    //    btnCerrarSesion.setOnClickListener {
-      //      FirebaseAuth.getInstance().signOut()
+        //    btnCerrarSesion.setOnClickListener {
+        //      FirebaseAuth.getInstance().signOut()
 
         //    onBackPressed()
         //}
@@ -161,5 +175,24 @@ class Home : AppCompatActivity() {
 
 
         })
+    }
+
+    private fun controlBotones() {
+
+        btnGaleria.setOnClickListener {
+           Toast.makeText(this,"Estamos en Galeria!",Toast.LENGTH_LONG).show()
+        }
+
+
+        btnNuevo.setOnClickListener {
+            val intent = Intent(this, form_cargar_nueve_obra::class.java)
+            startActivity(intent)
+        }
+
+        btnCerrarSesion.setOnClickListener {
+            val cerrasrSesion = userPreference.deleteUser()
+            val intent = Intent(this, login::class.java)
+            startActivity(intent)
+        }
     }
 }

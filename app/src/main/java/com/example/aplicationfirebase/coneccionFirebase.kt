@@ -1,6 +1,7 @@
 package com.example.aplicationfirebase
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import com.example.aplicationfirebase.models.Obra
@@ -46,7 +47,8 @@ class coneccionFirebase {
             getReferenciaObras().child(obra.id).setValue(hashMap)
                 .addOnCompleteListener {
                     Toast.makeText(mContext, "Cargado exitosamente.", Toast.LENGTH_LONG).show()
-
+                    println("CARGADO EXITOSAMENTE...")
+                    val intent = Intent(mContext,Home::class.java)
                 }
         } catch (e: IOException) {
             e.printStackTrace()

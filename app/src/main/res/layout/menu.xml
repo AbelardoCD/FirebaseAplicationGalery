@@ -3,50 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrincipal"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@drawable/mocalisaimg_desenfocada"
+    android:orientation="vertical"
     tools:context=".MenuActivity">
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-            android:layout_width="match_parent"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="#000000"
+            android:padding="10dp"
+            android:text="Abelardo" />
+
         <Button
             android:id="@+id/btnIrGaleria"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorFondoPrincipal"
+            android:padding="10dp"
+
             android:text="Galeria"
-            android:textColor="#111"
-            android:layout_marginTop="@android:dimen/app_icon_size"
-            android:background="@drawable/btnacceder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textColor="#111" />
 
         <Button
             android:id="@+id/btnIrVentanaNuevaObra"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorFondoPrincipal"
+            android:padding="10dp"
             android:text="Nuevo"
-            android:textColor="#111"
-            android:layout_marginTop="@android:dimen/thumbnail_width"
-            android:background="@drawable/btnacceder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textColor="#111" />
+
         <Button
             android:id="@+id/btncerrarSesion"
-            android:text="Cerrar Sesión"
-            android:textColor="#111"
-            android:layout_marginTop="@android:dimen/thumbnail_width"
-            android:background="@drawable/btnacceder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:background="@color/colorFondoPrincipal"
+            android:padding="10dp"
+            android:text="Cerrar Sesión"
+            android:textColor="#111" />
+
+
     </LinearLayout>
-    </ScrollView>
-
-
-
 
 
 </LinearLayout>

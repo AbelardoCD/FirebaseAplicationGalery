@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/imgDescripcionFondo"
         android:layout_width="match_parent"
-        android:background="@drawable/blur_image"
+        android:background="@drawable/img_descipcion_fondo"
         android:layout_height="match_parent">
 
     </ImageView>
@@ -61,7 +61,7 @@
                 android:padding="10dp"
                 android:layout_marginTop="@android:dimen/app_icon_size"
                 android:layout_marginRight="10dp"
-                android:layout_height="200dp">
+                android:layout_height="250dp">
                 <TextView
                     android:id="@+id/txtDescripcionDescripcion"
                     android:layout_width="match_parent"

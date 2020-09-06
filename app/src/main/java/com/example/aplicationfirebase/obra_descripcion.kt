@@ -1,5 +1,6 @@
 package com.example.aplicationfirebase
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -50,10 +51,9 @@ class obra_descripcion : AppCompatActivity() {
         txtDescripcionDescripcion.text = descripcionObra
         txtAutorObraDescripcion.text = autor
 
-        Glide.with(this).load(url).centerCrop().into(imgDescripcionFondo)
 
+       //Glide.with(this).asBitmap().load(url).centerCrop().into(imgDescripcionFondo)
 
-       // Blurry.with(this).capture(vistaDesenfocada).into(imgDescripcionFondo)
 
         Glide.with(this).load(url).thumbnail().into(imgObraDescripcion)
 
