@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorFondoPrincipal"
+    android:background="@color/colorPrincipal"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
@@ -21,7 +21,7 @@
             android:id="@+id/btnIrGaleria"
             android:text="Galeria"
             android:textColor="#111"
-            android:layout_marginTop="@android:dimen/thumbnail_width"
+            android:layout_marginTop="@android:dimen/app_icon_size"
             android:background="@drawable/btnacceder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

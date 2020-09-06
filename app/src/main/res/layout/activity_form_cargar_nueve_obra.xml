@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorFondoPrincipal"
+    android:background="@color/colorPrincipal"
     tools:context=".form_cargar_nueve_obra">
 <ScrollView
     android:layout_width="match_parent"
@@ -31,7 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@android:dimen/app_icon_size"
             android:layout_weight="1"
-            android:ems="10"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
             android:gravity="center"
             android:hint="Nombre"
             android:inputType="textPersonName" />
@@ -45,6 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@android:dimen/app_icon_size"
             android:layout_weight="1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
 
             android:ems="10"
             android:hint="Autor"
@@ -58,6 +62,9 @@
             android:layout_weight="1"
             style="?android:attr/yesNoPreferenceStyle"
             android:ems="10"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
             android:gravity="center"
             android:hint="Descripcion"
             android:inputType="textMultiLine" />
