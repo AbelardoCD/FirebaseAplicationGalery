@@ -1,15 +1,18 @@
 package com.example.aplicationfirebase
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.aplicationfirebase.models.Obra
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 import jp.wasabeef.blurry.Blurry
 import kotlinx.android.synthetic.main.activity_obra_descripcion.*
+
 
 class obra_descripcion : AppCompatActivity() {
 
@@ -18,6 +21,9 @@ class obra_descripcion : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_obra_descripcion)
+
+
+
 
         coneccion = coneccionFirebase(this)
         referencia = coneccion.getReferenciaObras()
@@ -43,17 +49,15 @@ class obra_descripcion : AppCompatActivity() {
         txtTituloObraDescripcion.text = nombre
         txtDescripcionDescripcion.text = descripcionObra
         txtAutorObraDescripcion.text = autor
-        Glide.with(this).load(url).into(imgObraDescripcion)
+
+        Glide.with(this).load(url).centerCrop().into(imgDescripcionFondo)
 
 
-       /* Blurry.with(this)
-            .radius(25)
-            .sampling(1)
-            .color(Color.argb(66, 0, 255, 255))
-            .async()
-            .capture(findViewById(R.id.imgObraDescripcion))
-            .into(findViewById(R.id.imgObraDescripcion))
-    */
+       // Blurry.with(this).capture(vistaDesenfocada).into(imgDescripcionFondo)
+
+        Glide.with(this).load(url).thumbnail().into(imgObraDescripcion)
+
+
     }
 
     private fun obtenemosId():String{
@@ -63,3 +67,6 @@ class obra_descripcion : AppCompatActivity() {
     }
 
 }
+
+
+
