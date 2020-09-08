@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".Temas"></activity>
+        <activity android:name=".MenuActivity" />
         <activity android:name=".obra_descripcion" />
         <activity android:name=".form_cargar_nueve_obra" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Home" />
         <activity
-            android:name=".login"
+                android:name=".login"
             android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

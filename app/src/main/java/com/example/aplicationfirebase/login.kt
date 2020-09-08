@@ -65,7 +65,7 @@ class login : AppCompatActivity() {
     private fun validarLoginLocalORemoto(){
         if(obtenerDatosUserLocal() !=false){
            // progresBar.visibility = View.INVISIBLE
-            val intent = Intent(this, Home::class.java)
+            val intent = Intent(this, Temas::class.java)
             startActivity(intent)
         }else{
             login()
@@ -152,7 +152,7 @@ class login : AppCompatActivity() {
     private fun logSuccess(email: String, provider: providerType) {
 
         progresBar.visibility = View.INVISIBLE
-        val intent = Intent(this, Home::class.java).apply {
+        val intent = Intent(this, Temas::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }

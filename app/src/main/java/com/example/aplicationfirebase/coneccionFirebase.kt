@@ -46,9 +46,8 @@ class coneccionFirebase {
 
             getReferenciaObras().child(obra.id).setValue(hashMap)
                 .addOnCompleteListener {
-                    Toast.makeText(mContext, "Cargado exitosamente.", Toast.LENGTH_LONG).show()
+                   // Toast.makeText(mContext, "Cargado exitosamente.", Toast.LENGTH_LONG).show()
                     println("CARGADO EXITOSAMENTE...")
-                    val intent = Intent(mContext,Home::class.java)
                 }
         } catch (e: IOException) {
             e.printStackTrace()

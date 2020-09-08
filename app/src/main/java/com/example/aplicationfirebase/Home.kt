@@ -36,9 +36,11 @@ class Home : AppCompatActivity() {
     lateinit var lista: ListView
 
     lateinit var userPreference:userPreferenceManager
-     lateinit var btnGaleria: Button
+    lateinit var btnGaleria: Button
     lateinit var btnCerrarSesion : Button
-    lateinit var btnNuevo: Button
+    lateinit var btnDescripcion: Button
+    lateinit var idMovimiento:String
+    lateinit var userLogeado:String
     /********************************************/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,23 +49,25 @@ class Home : AppCompatActivity() {
         userPreference = userPreferenceManager(this)
 
         btnGaleria =findViewById(R.id.btnIrGaleria)
-        btnNuevo =findViewById(R.id.btnIrVentanaNuevaObra)
+        btnDescripcion = findViewById(R.id.btnIrDescripcion)
         btnCerrarSesion = findViewById(R.id.btncerrarSesion)
         controlBotones()
 
         Auth = FirebaseAuth.getInstance()
         user = Auth.currentUser!!
+        userLogeado =""
         datosUsuarioLogeado(user)
         /****************************/
         database = FirebaseDatabase.getInstance()
-        referencia = database.getReference("obras")
+        referencia = database.getReference()
 
 
 
 
         obrasList = mutableListOf()
         lista = findViewById(R.id.lisVObras)
-
+        val intent = intent.extras
+        idMovimiento = intent?.getString("idMovimiento").toString()
 
         getObras()
 
@@ -88,6 +92,7 @@ class Home : AppCompatActivity() {
                 for (dato in snapshot.children) {
                     val user = dato.getValue(User::class.java)
                     txtEmailUser.text = user?.Nombre
+                     userLogeado = user?.Nombre.toString()
                 }
 
             }
@@ -99,7 +104,7 @@ class Home : AppCompatActivity() {
 
     fun getObras() {
         println("INICAIAMOS...........")
-        referencia.addValueEventListener(object : ValueEventListener {
+        referencia.child("movimiento").child(idMovimiento).child("obrasAsignadas").addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -108,15 +113,35 @@ class Home : AppCompatActivity() {
                 if (snapshot!!.exists()) {
                     obrasList.clear()
                     for (dato in snapshot.children) {
-                        val nuevaObra = dato.getValue(Obra::class.java)
-                        obrasList.add(nuevaObra!!)
+                       val idObra = dato.key
 
+                        referencia.child("obras").child(idObra!!).addValueEventListener(object : ValueEventListener {
+                            override fun onCancelled(error: DatabaseError) {
+                                TODO("Not yet implemented")
+                            }
+
+                            override fun onDataChange(snapshot: DataSnapshot) {
+
+
+                                        val nuevaObra  = snapshot.getValue(Obra::class.java)
+                                        obrasList.add(nuevaObra!!)
+
+
+                                val adp = obraAdapter(this@Home, obrasList)
+                                lista.adapter = adp
+
+
+                            }
+
+
+
+
+                        })
 
                     }
 
                 }
-                val adp = obraAdapter(this@Home, obrasList)
-                lista.adapter = adp
+
 
 
             }
@@ -180,12 +205,16 @@ class Home : AppCompatActivity() {
     private fun controlBotones() {
 
         btnGaleria.setOnClickListener {
-           Toast.makeText(this,"Estamos en Galeria!",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Estamos en Galeria!",Toast.LENGTH_LONG).show()
         }
 
 
-        btnNuevo.setOnClickListener {
-            val intent = Intent(this, form_cargar_nueve_obra::class.java)
+        btnIrDescripcion.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java).apply {
+               putExtra("idMovimiento",idMovimiento)
+                putExtra("usuarioLogeado",userLogeado)
+            }
+
             startActivity(intent)
         }
 
