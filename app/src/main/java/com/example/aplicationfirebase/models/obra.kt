@@ -4,6 +4,7 @@ import android.net.Uri
 
 class Obra(
     val  id:String,
+    val idMovimiento:String,
     val nombre:String,
     val autor:String,
     val descripcion:String,
@@ -11,7 +12,7 @@ class Obra(
 ){
 
 
-constructor() : this("","","","", "")
+constructor() : this("","","","","", "")
 }
 
 

@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="10dp"
+            android:layout_gravity="center"
             android:textColor="#000000"
             android:background="#ffca74"
             android:text="User" />
@@ -34,8 +35,9 @@
             android:background="#ffca74"
             android:padding="10dp"
             android:text="Galeria"
+            android:layout_gravity="center"
             android:textColor="#111"
-
+             android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -45,6 +47,7 @@
             android:layout_height="match_parent"
             android:background="#ffca74"
             android:padding="10dp"
+
             android:textStyle="bold"
             android:text="Descripcióon"
             android:textColor="#111" />

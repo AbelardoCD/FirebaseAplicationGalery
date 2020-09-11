@@ -36,6 +36,8 @@ class coneccionFirebase {
         try {
             var hashMap: HashMap<String, String> = HashMap<String, String>()
             hashMap.put("id", obra.id)
+            hashMap.put("idMovimiento", obra.idMovimiento)
+
             hashMap.put("nombre", obra.nombre)
             hashMap.put("autor", obra.autor)
             hashMap.put("descripcion", obra.descripcion)

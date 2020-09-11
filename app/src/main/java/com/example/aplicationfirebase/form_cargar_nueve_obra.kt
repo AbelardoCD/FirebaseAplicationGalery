@@ -87,11 +87,12 @@ class form_cargar_nueve_obra : AppCompatActivity() {
     }
 
     private fun guardarObra() {
-        getdatosNuevObra()
-        btnNuevaObra.setOnClickListener {
 
+        btnNuevaObra.setOnClickListener {
+            getdatosNuevObra()
             try {
-                if(nombre.isNotEmpty() && autor.isNotEmpty() && descripcion.isNotEmpty() &&  tema =="Selecciona" ){
+                println("datos nombre  " + nombre + "  autor" + autor  + " des" + descripcion +" tema" + tema )
+                if(nombre.isNotEmpty() && autor.isNotEmpty() && descripcion.isNotEmpty() &&  tema !="Selecciona" ){
 
                 val refer = firebaseStorage.child("imagesObras").child(filpath.lastPathSegment!!)
                 val uploadTask = refer.putFile(filpath)
@@ -112,7 +113,7 @@ class form_cargar_nueve_obra : AppCompatActivity() {
                         val ref = conFire.getReferenciaObras()
                         val idObra = ref.push().key
                         val nuevaObra = Obra(
-                            idObra!!, nombre, autor, descripcion,
+                            idObra!!, tema,nombre, autor, descripcion,
                             downloadUri.toString()
                         )
 
